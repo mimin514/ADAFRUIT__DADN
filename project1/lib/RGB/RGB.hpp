@@ -10,5 +10,6 @@ void RGB_setColor(uint8_t r, uint8_t g, uint8_t b);
 void RGB_clear();
 void RGB_setColorByName(const char* colorName);
 void RGB_setColoByNum(int num, const char* colorName);
+void RGBcallback(char *data, uint16_t len) ;
 
 #endif 

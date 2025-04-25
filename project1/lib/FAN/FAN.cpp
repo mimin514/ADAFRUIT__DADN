@@ -19,3 +19,23 @@ void fanCallback(uint32_t value) {
       turnOffFan();
     }
   }
+  void pump1Callback(uint32_t value) {
+    Serial.print("Pump 1 control received: ");
+    Serial.println(value);
+    if(value == 1){
+      digitalWrite(PUMP1_PIN, HIGH);
+    }
+    else{
+      digitalWrite(PUMP1_PIN, LOW);
+    }
+  }
+  void pump2Callback(uint32_t value) {
+    Serial.print("Pump 2 control received: ");
+    Serial.println(value);
+    if(value == 1){
+      digitalWrite(PUMP2_PIN, HIGH);
+    }
+    else{
+      digitalWrite(PUMP2_PIN, LOW);
+    }
+  }
