@@ -4,9 +4,8 @@
 #include <Adafruit_MQTT_Client.h>
 
 
-void connectWiFi() ;
+// void connectWiFi() ;
 void connectMQTT() ;
 void publishData(Adafruit_MQTT_Publish *a, float data);
-
-
+void connectWiFi(const char* name, const char* pass) ;
     #endif 

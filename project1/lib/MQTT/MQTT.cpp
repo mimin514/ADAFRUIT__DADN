@@ -1,17 +1,26 @@
 #include "MQTT.hpp"
 #include "global.hpp"
+#include <string>
 
 
-void connectWiFi() {
+// void connectWiFi() {
+//     Serial.print("Connecting to WiFi...");
+//     WiFi.begin(WIFI_SSID, WIFI_PASS);
+//     while (WiFi.status() != WL_CONNECTED) {
+//         delay(500);
+//         Serial.print(".");
+//     }
+//     Serial.println("Connected!");
+// }
+void connectWiFi(const char* name, const char* pass) {
     Serial.print("Connecting to WiFi...");
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
+    WiFi.begin(name, pass); // Use the provided C-style strings
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
     }
     Serial.println("Connected!");
 }
-
 void connectMQTT() {
     while (mqtt->connected() == false) {
         Serial.print("Connecting to MQTT...");
